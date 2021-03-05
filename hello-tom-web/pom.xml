@@ -17,7 +17,28 @@
    <build>
     <plugins>
       <!-- embedded Tomcat 9 plugin configuration, use "mvn cargo:run" to run -->
-    
+      <plugin>
+        <groupId>org.codehaus.cargo</groupId>
+        <artifactId>cargo-maven3-plugin</artifactId>
+        <version>1.9.1</version>
+        <configuration>
+          <container>
+            <containerId>tomcat9x</containerId>
+            <artifactInstaller>
+              <groupId>org.apache.tomcat</groupId>
+              <artifactId>tomcat</artifactId>
+              <version>${tomcat.version}</version>
+            </artifactInstaller>
+          </container>
+          <deployables>
+            <deployable>
+              <properties>
+                <context>/my-different-context</context>
+              </properties>
+            </deployable>
+          </deployables>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
   
