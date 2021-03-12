@@ -23,4 +23,5 @@
 
     <!-- list of logger prefixes with non-default logging levels -->
     <logger name="org" level="info"/>
+    <logger name="cz.muni.fi.pa165.currency" level="trace"/>
 </configuration>
